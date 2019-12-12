@@ -1,16 +1,16 @@
-# Scale-invariant PCM
+# Scale Invariant Multi-robot Map Merging
 
-Pairwise Consistent Measurement Set Maximization for Robust Multi-robot Map Merging, where the Scales between Robots are unknown.
+Method for merging graphs from multiple robots where the scales between them are unknown.
 
 ## Dependencies
-* GTSAM with python bindings
+* Modified version of GTSAM with python bindings (hosted at https://github.mit.edu/vnav-project/gtsam)
 * numpy
 * numpy-quaternion
 * sophuspy
 * scipy
 * numba
 * tqdm
-* fmc in find_max_clique/fmc
+* fmc in `find_max_clique/fmc`
 
 ## Setup
 Update your PYTHONPATH environment variable to include the root of the project
