@@ -46,7 +46,7 @@ if __name__ == "__main__":
     mtx_fpath = "adj.mtx"
     io.mmwrite(mtx_fpath, coo_adj_mat, field='integer', symmetry='symmetric')
 
-    print("initial lc:\n")
+    print("Candidate loop closures:")
     for i, edge in enumerate(adj.inter_lc_edges, 1):
         print("{}: {}".format(i, edge))
 
@@ -61,8 +61,8 @@ if __name__ == "__main__":
     # Call fmc on the adjacency matrix, to get trusted inter-robot loop closures
     fmc_path = "find_max_clique/fmc/src/fmc"
     trusted_lc_indices = find_max_clique(fmc_path, mtx_fpath)
-    print("# trusted lc: {}".format(len(trusted_lc_indices)))
-    print(trusted_lc_indices)
+    print("# Trusted loop closures: {}".format(len(trusted_lc_indices)))
+    print("Indices of trusted loop closures: {}".format(trusted_lc_indices))
     trusted_lc = adj.get_trusted_lc(trusted_lc_indices)
     multi_graph.set_inter_lc(trusted_lc)
     multi_graph.write_to(args.output_fpath)
